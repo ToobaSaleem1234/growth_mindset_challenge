@@ -50,7 +50,7 @@ if uploaded_files:
                     st.write("Removed duplicates!")
             with col2:
                 if st.button(f"Fill missing values from the file :{file.name}" ):
-                    numeric_cols = df.select_dtypes(includes=['number']).columns
+                    numeric_cols = df.select_dtypes(include=['number']).columns
                     df[numeric_cols] = df[numeric_cols].fillna(df[numeric_cols].mean())
                     st.write("Filled missing values!")
         st.subheader("Select the columns to Keep")
